@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicinal Plant Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Medicinal Plant Image Prediction</h1>
+
+        {% if not predicted_class %}
+        <!-- Upload Form Section -->
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*" required>
+            <button type="submit" class="upload-button">Upload and Predict</button>
+        </form>
+        {% else %}
+        <!-- Prediction Result Section -->
+        <h2>Prediction Result</h2>
+        <div class="result-container">
+            <!-- Left side: Plant Information -->
+            <div class="info-section">
+                <p><strong>Predicted Class:</strong> {{ predicted_class }}</p>
+                <p><strong>Confidence:</strong> {{ confidence_score|round(2) }}%</p>
+                <p><strong>Medicinal Uses:</strong></p>
+                <p class="plant-info">{{ ai_response }}</p>
+            </div>
+            <!-- Right side: Image -->
+            <div class="image-section">
+                <img src="{{ image_url }}" alt="Uploaded Image">
+            </div>
+        </div>
+
+        <!-- Back button to upload another image -->
+        <form method="GET" action="/">
+            <button type="submit" class="back-button">Back to Upload</button>
+        </form>
+        {% endif %}
+    </div>
+</body>
+</html>
