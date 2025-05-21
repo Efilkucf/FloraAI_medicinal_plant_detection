@@ -1,4 +1,5 @@
 # 🌿 FloraAI – Medicinal Plant Detection
+![Screenshot 2025-05-06 204714](https://github.com/user-attachments/assets/4c966f86-412d-44a2-8f04-44225712d7f5)
 
 FloraAI is a deep learning-powered medicinal plant classification web app. It helps users identify medicinal plants from images using a trained PyTorch model, and provides detailed descriptions of the plants using the OpenAI GPT API.
 
@@ -135,3 +136,5 @@ PyTorch for model development
 OpenAI for plant description generation
 
 Inspired by the intersection of AI and herbal medicine 🌿
+
+see the results:
