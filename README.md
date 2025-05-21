@@ -80,8 +80,8 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 1. Clone the repository:
 ```bash
 git clone https://github.com/Efilkucf/FloraAI_medicinal_plant_detection.git
-```
 cd FloraAI_medicinal_plant_detection
+```
 2. Install dependencies:
 ```bash
 pip install -r requirements.txt
